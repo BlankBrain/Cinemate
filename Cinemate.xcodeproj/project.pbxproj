@@ -16,6 +16,11 @@
 		73992B0423E2DC97001C6D83 /* CinemateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B0323E2DC97001C6D83 /* CinemateTests.swift */; };
 		73992B0F23E2DC97001C6D83 /* CinemateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B0E23E2DC97001C6D83 /* CinemateUITests.swift */; };
 		73992B1D23E2DD59001C6D83 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B1C23E2DD59001C6D83 /* LoginViewController.swift */; };
+		73992B1F23E2E45C001C6D83 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B1E23E2E45C001C6D83 /* PersistanceService.swift */; };
+		73992B2123E2E576001C6D83 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B2023E2E576001C6D83 /* SignUpViewController.swift */; };
+		73992B2323E2E5A3001C6D83 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B2223E2E5A3001C6D83 /* HomeViewController.swift */; };
+		73992B2523E2E5B6001C6D83 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B2423E2E5B6001C6D83 /* SearchViewController.swift */; };
+		73992B2723E2E5CF001C6D83 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B2623E2E5CF001C6D83 /* SearchResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		73992B0E23E2DC97001C6D83 /* CinemateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemateUITests.swift; sourceTree = "<group>"; };
 		73992B1023E2DC97001C6D83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73992B1C23E2DD59001C6D83 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		73992B1E23E2E45C001C6D83 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
+		73992B2023E2E576001C6D83 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		73992B2223E2E5A3001C6D83 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		73992B2423E2E5B6001C6D83 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		73992B2623E2E5CF001C6D83 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 		73992AE823E2DC93001C6D83 /* Cinemate */ = {
 			isa = PBXGroup;
 			children = (
+				73992B2823E2E5E5001C6D83 /* Viewcontrollers */,
 				73992AE923E2DC93001C6D83 /* AppDelegate.swift */,
 				73992AEB23E2DC93001C6D83 /* SceneDelegate.swift */,
 				73992AEF23E2DC93001C6D83 /* Main.storyboard */,
@@ -108,7 +119,7 @@
 				73992AF723E2DC96001C6D83 /* LaunchScreen.storyboard */,
 				73992AFA23E2DC96001C6D83 /* Info.plist */,
 				73992AF223E2DC93001C6D83 /* Cinemate.xcdatamodeld */,
-				73992B1C23E2DD59001C6D83 /* LoginViewController.swift */,
+				73992B2923E2E62C001C6D83 /* Static func */,
 			);
 			path = Cinemate;
 			sourceTree = "<group>";
@@ -129,6 +140,26 @@
 				73992B1023E2DC97001C6D83 /* Info.plist */,
 			);
 			path = CinemateUITests;
+			sourceTree = "<group>";
+		};
+		73992B2823E2E5E5001C6D83 /* Viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				73992B2223E2E5A3001C6D83 /* HomeViewController.swift */,
+				73992B2023E2E576001C6D83 /* SignUpViewController.swift */,
+				73992B1C23E2DD59001C6D83 /* LoginViewController.swift */,
+				73992B2423E2E5B6001C6D83 /* SearchViewController.swift */,
+				73992B2623E2E5CF001C6D83 /* SearchResultViewController.swift */,
+			);
+			name = Viewcontrollers;
+			sourceTree = "<group>";
+		};
+		73992B2923E2E62C001C6D83 /* Static func */ = {
+			isa = PBXGroup;
+			children = (
+				73992B1E23E2E45C001C6D83 /* PersistanceService.swift */,
+			);
+			name = "Static func";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,10 +293,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73992B2123E2E576001C6D83 /* SignUpViewController.swift in Sources */,
+				73992B2723E2E5CF001C6D83 /* SearchResultViewController.swift in Sources */,
 				73992B1D23E2DD59001C6D83 /* LoginViewController.swift in Sources */,
+				73992B2523E2E5B6001C6D83 /* SearchViewController.swift in Sources */,
 				73992AEA23E2DC93001C6D83 /* AppDelegate.swift in Sources */,
 				73992AEC23E2DC93001C6D83 /* SceneDelegate.swift in Sources */,
 				73992AF423E2DC93001C6D83 /* Cinemate.xcdatamodeld in Sources */,
+				73992B2323E2E5A3001C6D83 /* HomeViewController.swift in Sources */,
+				73992B1F23E2E45C001C6D83 /* PersistanceService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
