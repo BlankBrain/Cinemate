@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		73992AEA23E2DC93001C6D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992AE923E2DC93001C6D83 /* AppDelegate.swift */; };
 		73992AEC23E2DC93001C6D83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992AEB23E2DC93001C6D83 /* SceneDelegate.swift */; };
-		73992AEE23E2DC93001C6D83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992AED23E2DC93001C6D83 /* ViewController.swift */; };
 		73992AF123E2DC93001C6D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73992AEF23E2DC93001C6D83 /* Main.storyboard */; };
 		73992AF423E2DC93001C6D83 /* Cinemate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73992AF223E2DC93001C6D83 /* Cinemate.xcdatamodeld */; };
 		73992AF623E2DC96001C6D83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73992AF523E2DC96001C6D83 /* Assets.xcassets */; };
 		73992AF923E2DC96001C6D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73992AF723E2DC96001C6D83 /* LaunchScreen.storyboard */; };
 		73992B0423E2DC97001C6D83 /* CinemateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B0323E2DC97001C6D83 /* CinemateTests.swift */; };
 		73992B0F23E2DC97001C6D83 /* CinemateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B0E23E2DC97001C6D83 /* CinemateUITests.swift */; };
+		73992B1D23E2DD59001C6D83 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B1C23E2DD59001C6D83 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		73992AE623E2DC93001C6D83 /* Cinemate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73992AE923E2DC93001C6D83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73992AEB23E2DC93001C6D83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		73992AED23E2DC93001C6D83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		73992AF023E2DC93001C6D83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73992AF323E2DC93001C6D83 /* Cinemate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cinemate.xcdatamodel; sourceTree = "<group>"; };
 		73992AF523E2DC96001C6D83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		73992B0A23E2DC97001C6D83 /* CinemateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73992B0E23E2DC97001C6D83 /* CinemateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemateUITests.swift; sourceTree = "<group>"; };
 		73992B1023E2DC97001C6D83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73992B1C23E2DD59001C6D83 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +103,12 @@
 			children = (
 				73992AE923E2DC93001C6D83 /* AppDelegate.swift */,
 				73992AEB23E2DC93001C6D83 /* SceneDelegate.swift */,
-				73992AED23E2DC93001C6D83 /* ViewController.swift */,
 				73992AEF23E2DC93001C6D83 /* Main.storyboard */,
 				73992AF523E2DC96001C6D83 /* Assets.xcassets */,
 				73992AF723E2DC96001C6D83 /* LaunchScreen.storyboard */,
 				73992AFA23E2DC96001C6D83 /* Info.plist */,
 				73992AF223E2DC93001C6D83 /* Cinemate.xcdatamodeld */,
+				73992B1C23E2DD59001C6D83 /* LoginViewController.swift */,
 			);
 			path = Cinemate;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73992AEE23E2DC93001C6D83 /* ViewController.swift in Sources */,
+				73992B1D23E2DD59001C6D83 /* LoginViewController.swift in Sources */,
 				73992AEA23E2DC93001C6D83 /* AppDelegate.swift in Sources */,
 				73992AEC23E2DC93001C6D83 /* SceneDelegate.swift in Sources */,
 				73992AF423E2DC93001C6D83 /* Cinemate.xcdatamodeld in Sources */,
