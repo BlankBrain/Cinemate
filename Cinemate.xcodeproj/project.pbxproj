@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,9 @@
 		73992B2523E2E5B6001C6D83 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B2423E2E5B6001C6D83 /* SearchViewController.swift */; };
 		73992B2723E2E5CF001C6D83 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B2623E2E5CF001C6D83 /* SearchResultViewController.swift */; };
 		73992B2B23E2F9B7001C6D83 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73992B2A23E2F9B7001C6D83 /* GoogleService-Info.plist */; };
+		73C8AFBC23E31CC600DBA97A /* AlartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8AFBB23E31CC600DBA97A /* AlartController.swift */; };
+		73C8AFC823E3362900DBA97A /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8AFC623E3362900DBA97A /* User+CoreDataClass.swift */; };
+		73C8AFC923E3362900DBA97A /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8AFC723E3362900DBA97A /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		73992B2423E2E5B6001C6D83 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		73992B2623E2E5CF001C6D83 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		73992B2A23E2F9B7001C6D83 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73C8AFBB23E31CC600DBA97A /* AlartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlartController.swift; sourceTree = "<group>"; };
+		73C8AFC623E3362900DBA97A /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		73C8AFC723E3362900DBA97A /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		919AB5515B87066580FC4F80 /* Pods-CinemateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemateTests.release.xcconfig"; path = "Target Support Files/Pods-CinemateTests/Pods-CinemateTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC91F287A7D60F645B3FC885 /* Pods-Cinemate-CinemateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinemate-CinemateUITests.debug.xcconfig"; path = "Target Support Files/Pods-Cinemate-CinemateUITests/Pods-Cinemate-CinemateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCDF92A7820C66112343E13E /* Pods-Cinemate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinemate.debug.xcconfig"; path = "Target Support Files/Pods-Cinemate/Pods-Cinemate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,7 +121,6 @@
 				1FD740C4EF982C526ED06BA9 /* Pods-CinemateTests.debug.xcconfig */,
 				919AB5515B87066580FC4F80 /* Pods-CinemateTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -191,7 +196,10 @@
 		73992B2923E2E62C001C6D83 /* Static func */ = {
 			isa = PBXGroup;
 			children = (
+				73C8AFC623E3362900DBA97A /* User+CoreDataClass.swift */,
+				73C8AFC723E3362900DBA97A /* User+CoreDataProperties.swift */,
 				73992B1E23E2E45C001C6D83 /* PersistanceService.swift */,
+				73C8AFBB23E31CC600DBA97A /* AlartController.swift */,
 			);
 			name = "Static func";
 			sourceTree = "<group>";
@@ -446,13 +454,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73C8AFBC23E31CC600DBA97A /* AlartController.swift in Sources */,
 				73992B2123E2E576001C6D83 /* SignUpViewController.swift in Sources */,
+				73C8AFC923E3362900DBA97A /* User+CoreDataProperties.swift in Sources */,
 				73992B2723E2E5CF001C6D83 /* SearchResultViewController.swift in Sources */,
 				73992B1D23E2DD59001C6D83 /* LoginViewController.swift in Sources */,
 				73992B2523E2E5B6001C6D83 /* SearchViewController.swift in Sources */,
 				73992AEA23E2DC93001C6D83 /* AppDelegate.swift in Sources */,
 				73992AEC23E2DC93001C6D83 /* SceneDelegate.swift in Sources */,
 				73992AF423E2DC93001C6D83 /* Cinemate.xcdatamodeld in Sources */,
+				73C8AFC823E3362900DBA97A /* User+CoreDataClass.swift in Sources */,
 				73992B2323E2E5A3001C6D83 /* HomeViewController.swift in Sources */,
 				73992B1F23E2E45C001C6D83 /* PersistanceService.swift in Sources */,
 			);

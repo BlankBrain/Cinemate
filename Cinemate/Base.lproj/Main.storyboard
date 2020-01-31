@@ -40,6 +40,9 @@
                                 <state key="normal" title="Log in ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k1j-it-MtB"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't Have Accout ? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dc-Fq-raU">
                                 <rect key="frame" x="50" y="488" width="314" height="50"/>
@@ -95,6 +98,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wk2-ER-MQI"/>
                     <connections>
+                        <outlet property="emailInput" destination="RfI-Nz-0Ab" id="aWW-b2-Pv2"/>
+                        <outlet property="passwordInput" destination="vOl-7E-wDf" id="olK-Za-p62"/>
                         <segue destination="sUO-4F-Qqq" kind="show" identifier="logIn" id="d5q-gU-UO2"/>
                     </connections>
                 </viewController>
@@ -222,18 +227,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ry-yZ-MPN">
-                                <rect key="frame" x="25" y="282" width="174" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.29535446580000002" green="0.78039215689999997" blue="0.69403623209999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Search Movies">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7y-dW-U1q">
                                 <rect key="frame" x="273" y="40" width="121" height="40"/>
                                 <color key="backgroundColor" red="0.29535446580000002" green="0.78039215689999997" blue="0.69403623209999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Log out">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutClicked:" destination="sUO-4F-Qqq" eventType="touchUpInside" id="WF9-fV-t3p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ry-yZ-MPN">
+                                <rect key="frame" x="20" y="132" width="174" height="50"/>
+                                <color key="backgroundColor" red="0.29535446580000002" green="0.78039215689999997" blue="0.69403623209999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Search Movies">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -241,17 +248,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="b7y-dW-U1q" firstAttribute="bottom" secondItem="iSn-J7-TsU" secondAttribute="bottom" id="5ti-KM-KgG"/>
+                            <constraint firstItem="3ry-yZ-MPN" firstAttribute="leading" secondItem="uQn-S7-1me" secondAttribute="leadingMargin" id="9uM-oq-wPf"/>
                             <constraint firstItem="b7y-dW-U1q" firstAttribute="trailing" secondItem="uQn-S7-1me" secondAttribute="trailingMargin" id="AoK-oh-dPH"/>
+                            <constraint firstItem="3ry-yZ-MPN" firstAttribute="top" secondItem="iSn-J7-TsU" secondAttribute="bottom" constant="52" id="Dv9-jf-54j"/>
                             <constraint firstItem="b7y-dW-U1q" firstAttribute="top" secondItem="iSn-J7-TsU" secondAttribute="top" id="ESX-3c-RuK"/>
                             <constraint firstItem="O8g-UG-edS" firstAttribute="trailing" secondItem="iSn-J7-TsU" secondAttribute="trailing" constant="25" id="I7S-1k-gPd"/>
                             <constraint firstItem="iSn-J7-TsU" firstAttribute="leading" secondItem="O8g-UG-edS" secondAttribute="leading" constant="25" id="Phs-xX-zsm"/>
+                            <constraint firstItem="O8g-UG-edS" firstAttribute="trailing" secondItem="3ry-yZ-MPN" secondAttribute="trailing" constant="220" id="RcL-tu-5vk"/>
                             <constraint firstItem="b7y-dW-U1q" firstAttribute="leading" secondItem="O8g-UG-edS" secondAttribute="leading" constant="273" id="gPQ-BN-xCM"/>
+                            <constraint firstItem="O8g-UG-edS" firstAttribute="bottom" secondItem="3ry-yZ-MPN" secondAttribute="bottom" constant="626" id="kaD-Bw-xGs"/>
                             <constraint firstItem="iSn-J7-TsU" firstAttribute="top" secondItem="O8g-UG-edS" secondAttribute="top" constant="40" id="sUd-zN-5b7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O8g-UG-edS"/>
                     </view>
                     <navigationItem key="navigationItem" id="vYh-ni-Ee9"/>
                     <connections>
+                        <outlet property="emailLabel" destination="iSn-J7-TsU" id="k0B-T6-u5g"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="logOut" id="W2d-Ky-vQ7"/>
                         <segue destination="tby-aN-5Ig" kind="show" identifier="searchResult" id="ggN-NZ-H0M"/>
                     </connections>
@@ -267,11 +279,74 @@
                     <view key="view" contentMode="scaleToFill" id="5Wg-ci-QYO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0o-PF-zCo">
+                                <rect key="frame" x="25" y="50" width="40.5" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Jhy-bL-EK0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bVN-Pi-O1e">
+                                <rect key="frame" x="25" y="148" width="212" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="212" id="V2z-aG-ha6"/>
+                                    <constraint firstAttribute="height" constant="50" id="xHS-kG-Saj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OrM-ud-MGK">
+                                <rect key="frame" x="0.0" y="225" width="414" height="583"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="h4h-N2-Q5K">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h4h-N2-Q5K" id="PoV-ss-wj8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMu-86-LIu">
+                                <rect key="frame" x="254" y="148" width="140" height="50"/>
+                                <color key="backgroundColor" red="0.29535446580000002" green="0.78039215689999997" blue="0.69403623209999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchClicked:" destination="tby-aN-5Ig" eventType="touchUpInside" id="lyZ-EV-FOG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QMu-86-LIu" firstAttribute="top" secondItem="bVN-Pi-O1e" secondAttribute="top" id="Bb7-fJ-RsB"/>
+                            <constraint firstItem="bVN-Pi-O1e" firstAttribute="top" secondItem="w0o-PF-zCo" secondAttribute="bottom" constant="40" id="Bv7-hY-3Go"/>
+                            <constraint firstItem="QMu-86-LIu" firstAttribute="trailing" secondItem="5Wg-ci-QYO" secondAttribute="trailingMargin" id="HtA-ad-cGj"/>
+                            <constraint firstItem="QMu-86-LIu" firstAttribute="leading" secondItem="bVN-Pi-O1e" secondAttribute="trailing" constant="17" id="J5k-If-b92"/>
+                            <constraint firstItem="OrM-ud-MGK" firstAttribute="leading" secondItem="ut4-GE-CTE" secondAttribute="leading" id="K88-Nb-JAh"/>
+                            <constraint firstItem="QMu-86-LIu" firstAttribute="bottom" secondItem="bVN-Pi-O1e" secondAttribute="bottom" id="g56-eA-UCH"/>
+                            <constraint firstItem="w0o-PF-zCo" firstAttribute="top" secondItem="ut4-GE-CTE" secondAttribute="top" constant="50" id="hO0-WT-bRa"/>
+                            <constraint firstItem="ut4-GE-CTE" firstAttribute="trailing" secondItem="OrM-ud-MGK" secondAttribute="trailing" id="hen-2Z-kgu"/>
+                            <constraint firstItem="OrM-ud-MGK" firstAttribute="top" secondItem="bVN-Pi-O1e" secondAttribute="bottom" constant="27" id="kdg-TN-h8p"/>
+                            <constraint firstItem="w0o-PF-zCo" firstAttribute="leading" secondItem="ut4-GE-CTE" secondAttribute="leading" constant="25" id="lIN-6G-Hqh"/>
+                            <constraint firstItem="bVN-Pi-O1e" firstAttribute="leading" secondItem="w0o-PF-zCo" secondAttribute="leading" id="lhd-bD-oNb"/>
+                            <constraint firstItem="OrM-ud-MGK" firstAttribute="bottom" secondItem="ut4-GE-CTE" secondAttribute="bottom" id="orT-1r-cv7"/>
+                            <constraint firstItem="QMu-86-LIu" firstAttribute="top" secondItem="ut4-GE-CTE" secondAttribute="top" constant="148" id="ph1-cM-MI7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ut4-GE-CTE"/>
                     </view>
                     <navigationItem key="navigationItem" id="e9c-CI-azw"/>
                     <connections>
+                        <outlet property="emailLabel" destination="w0o-PF-zCo" id="0OT-8X-K03"/>
+                        <outlet property="searchInput" destination="bVN-Pi-O1e" id="89B-LU-EdI"/>
+                        <outlet property="tableview" destination="OrM-ud-MGK" id="ABG-fq-H42"/>
                         <segue destination="AsR-S8-L8w" kind="show" identifier="searchResultDetails" id="tfD-9J-lXe"/>
                     </connections>
                 </viewController>
