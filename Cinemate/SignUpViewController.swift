@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 import CoreData
 
+
 class SignUpViewController: UIViewController {
 
  

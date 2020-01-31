@@ -10,6 +10,7 @@ target 'Cinemate' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
+  pod 'Alamofire', '~> 5.0.0-rc.3' 
   # add pods for any other desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
 

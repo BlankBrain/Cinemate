@@ -27,6 +27,14 @@ class HomeViewController: UIViewController {
 
     }
     
-  
+    @IBAction func searchMovieClicked(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "searchResult", sender: self) 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let SearchViewController = segue.destination as? SearchViewController else {return}
+        SearchViewController.user = self.user
 
+    }
 }
