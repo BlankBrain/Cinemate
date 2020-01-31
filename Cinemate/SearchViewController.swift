@@ -22,7 +22,7 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
     let decoder = JSONDecoder()
     var user = User(context: PersistanceService.context)
     var courses = [Course]()
-    
+    var movieSearchResult1 = [movieSearchResult]()
 
     
     //================= view did load =====================
@@ -35,14 +35,14 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
     
 
     @IBAction func searchClicked(_ sender: Any) {
-        AF.request("https://api.letsbuildthatapp.com/jsondecodable/courses").responseJSON { response in
+        AF.request("http://www.omdbapi.com/?apikey=df031d45&s=titanic").responseJSON { response in
 
                     do{
-                        let courses = try self.decoder.decode([Course].self , from: response.data! )
-                        self.courses = courses
+                        let movieSearchResult1 = try self.decoder.decode([movieSearchResult].self , from: response.data! )
+                        self.movieSearchResult1 = movieSearchResult1
               //object where the data will be saved >>    decoder method. decode ( model , from data object )
 
-                        print(courses)
+                        print(movieSearchResult1)
                         self.tableview.reloadData()
                     }catch{
                         print("error parsing json data")  }
@@ -53,13 +53,13 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
     
     //======================= tableview ===================
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        numberOfCellsTable = courses.count
+        numberOfCellsTable = movieSearchResult1.first?.Search.count ?? 1
          return numberOfCellsTable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifiar, for: indexPath) as UITableViewCell
-        cell.textLabel?.text =  courses[indexPath.row].name
+        cell.textLabel?.text =  movieSearchResult1.first?.Search.first?.Title ?? "No result found"
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
