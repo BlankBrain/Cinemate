@@ -18,17 +18,75 @@ struct Course :Decodable {
 }
 
 struct movieSearchResult : Decodable{
-     let Search: [MovieResult]
+     let Search: [Search]
+    let totalResults: String?
+    let Response: String?
+    
+    init(Search: [Search] = [], 
+         totalResults: String? = nil,
+         Response: String?) {
+        
+        self.Search = Search
+        self.totalResults = totalResults
+        self.Response  = Response
+    }
 }
 
-struct MovieResult :Decodable {
-    
+struct Search :Decodable {
+
         let Title: String?
         let Year: String?
         let imdbID: String?
         let `Type`: String?
         let Poster: String?
 }
+
+struct myStructWithInit {
+    let myString: String?
+    let myInt: Int?
+    let myDouble: Double?
+    
+    init(myString: String? = nil, //👈
+         myInt: Int? = nil,
+         myDouble: Double? = nil) {
+        
+        self.myString = myString
+        self.myInt = myInt
+        self.myDouble = myDouble
+    }
+}
+//// MARK: - Welcome
+//struct movieSearchResult: Decodable {
+//    let search: [Search]
+//    let totalResults, response: String
+//
+//    enum CodingKeys: String, CodingKey {
+//        case search = "Search"
+//        case totalResults
+//        case response = "Response"
+//    }
+//}
+//// MARK: - Search
+//struct Search: Decodable {
+//    let title, year, imdbID: String
+//    let type: TypeEnum
+//    let poster: String
+//
+//    enum CodingKeys: String, CodingKey {
+//        case title = "Title"
+//        case year = "Year"
+//        case imdbID
+//        case type = "Type"
+//        case poster = "Poster"
+//    }
+//}
+//
+//enum TypeEnum: String, Codable {
+//    case movie = "movie"
+//    case series = "series"
+//}
+
+
 struct Movie :Decodable{
     
      let Title: String?

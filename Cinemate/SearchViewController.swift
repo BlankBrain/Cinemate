@@ -22,7 +22,10 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
     let decoder = JSONDecoder()
     var user = User(context: PersistanceService.context)
     var courses = [Course]()
-    var movieSearchResult1 = [movieSearchResult]()
+    var movieSearchResult1 = movieSearchResult(Response: "hellp")
+    var url:String = "http://www.omdbapi.com/?apikey=df031d45&"
+    
+    var movies = [Movie]()
 
     
     //================= view did load =====================
@@ -35,14 +38,16 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
     
 
     @IBAction func searchClicked(_ sender: Any) {
-        AF.request("http://www.omdbapi.com/?apikey=df031d45&s=titanic").responseJSON { response in
-
+        AF.request(url + "s=" + (self.searchInput.text ?? "")).responseJSON{ response in
+            
                     do{
-                        let movieSearchResult1 = try self.decoder.decode([movieSearchResult].self , from: response.data! )
-                        self.movieSearchResult1 = movieSearchResult1
+                     
+                        let movieSearchResult1 = try self.decoder.decode(movieSearchResult.self , from: response.data! )
+                      //  self.movieSearchResult1 = movieSearchResult1
               //object where the data will be saved >>    decoder method. decode ( model , from data object )
 
                         print(movieSearchResult1)
+                        self.movieSearchResult1 = movieSearchResult1
                         self.tableview.reloadData()
                     }catch{
                         print("error parsing json data")  }
@@ -53,17 +58,17 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
     
     //======================= tableview ===================
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        numberOfCellsTable = movieSearchResult1.first?.Search.count ?? 1
+        numberOfCellsTable = movieSearchResult1.Search.count
          return numberOfCellsTable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifiar, for: indexPath) as UITableViewCell
-        cell.textLabel?.text =  movieSearchResult1.first?.Search.first?.Title ?? "No result found"
+        cell.textLabel?.text =  movieSearchResult1.Search[indexPath.row].Title
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        print(movieSearchResult1.Search[indexPath.row].Year)
 
        }
     
