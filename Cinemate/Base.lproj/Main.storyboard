@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zk6-BP-eiJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tby-aN-5Ig">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -218,24 +218,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSn-J7-TsU">
-                                <rect key="frame" x="23" y="66" width="211" height="67"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSn-J7-TsU">
+                                <rect key="frame" x="20" y="20" width="210" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ry-yZ-MPN">
-                                <rect key="frame" x="23" y="252" width="174" height="50"/>
-                                <color key="backgroundColor" red="0.29535446580000002" green="0.78039215689999997" blue="0.69403623209999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Search Movies">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="searchMovieClicked:" destination="sUO-4F-Qqq" eventType="touchUpInside" id="HDY-QR-ERk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7y-dW-U1q">
-                                <rect key="frame" x="292" y="77" width="102" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7y-dW-U1q">
+                                <rect key="frame" x="20" y="78" width="85" height="40"/>
                                 <color key="backgroundColor" red="0.29535446580000002" green="0.78039215689999997" blue="0.69403623209999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Log out">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -244,21 +234,31 @@
                                     <action selector="logOutClicked:" destination="sUO-4F-Qqq" eventType="touchUpInside" id="WF9-fV-t3p"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ry-yZ-MPN">
+                                <rect key="frame" x="20" y="137" width="174" height="50"/>
+                                <color key="backgroundColor" red="0.29535446580000002" green="0.78039215689999997" blue="0.69403623209999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Search Movies">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchMovieClicked:" destination="sUO-4F-Qqq" eventType="touchUpInside" id="HDY-QR-ERk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="3ry-yZ-MPN" firstAttribute="top" secondItem="iSn-J7-TsU" secondAttribute="bottom" constant="119" id="186-xz-1dM"/>
-                            <constraint firstItem="O8g-UG-edS" firstAttribute="bottom" secondItem="3ry-yZ-MPN" secondAttribute="bottom" constant="506" id="7Aj-kB-QA3"/>
-                            <constraint firstItem="O8g-UG-edS" firstAttribute="trailing" secondItem="3ry-yZ-MPN" secondAttribute="trailing" constant="217" id="7RY-79-VAv"/>
-                            <constraint firstItem="b7y-dW-U1q" firstAttribute="trailing" secondItem="uQn-S7-1me" secondAttribute="trailingMargin" id="I6b-wb-qwT"/>
-                            <constraint firstItem="iSn-J7-TsU" firstAttribute="top" secondItem="b7y-dW-U1q" secondAttribute="top" constant="-11" id="JHb-9k-nD2"/>
-                            <constraint firstItem="iSn-J7-TsU" firstAttribute="top" secondItem="O8g-UG-edS" secondAttribute="top" constant="66" id="R6h-K9-dPf"/>
-                            <constraint firstItem="3ry-yZ-MPN" firstAttribute="leading" secondItem="uQn-S7-1me" secondAttribute="leadingMargin" constant="3" id="Tef-ja-Oyc"/>
-                            <constraint firstItem="O8g-UG-edS" firstAttribute="bottom" secondItem="b7y-dW-U1q" secondAttribute="bottom" constant="686" id="UZH-c0-N9W"/>
-                            <constraint firstItem="b7y-dW-U1q" firstAttribute="leading" secondItem="O8g-UG-edS" secondAttribute="leading" constant="292" id="dOM-fA-kTY"/>
-                            <constraint firstItem="iSn-J7-TsU" firstAttribute="leading" secondItem="O8g-UG-edS" secondAttribute="leading" constant="23" id="hHr-VE-u0U"/>
-                            <constraint firstItem="O8g-UG-edS" firstAttribute="trailing" secondItem="iSn-J7-TsU" secondAttribute="trailing" constant="180" id="syk-pn-CW6"/>
-                            <constraint firstItem="iSn-J7-TsU" firstAttribute="bottom" secondItem="b7y-dW-U1q" secondAttribute="bottom" constant="11" id="v5g-JQ-Awi"/>
+                            <constraint firstItem="3ry-yZ-MPN" firstAttribute="top" secondItem="iSn-J7-TsU" secondAttribute="bottom" constant="30" id="186-xz-1dM"/>
+                            <constraint firstItem="O8g-UG-edS" firstAttribute="bottom" secondItem="3ry-yZ-MPN" secondAttribute="bottom" constant="606" id="7Aj-kB-QA3"/>
+                            <constraint firstItem="O8g-UG-edS" firstAttribute="trailing" secondItem="3ry-yZ-MPN" secondAttribute="trailing" constant="228" id="7RY-79-VAv"/>
+                            <constraint firstItem="b7y-dW-U1q" firstAttribute="trailing" secondItem="uQn-S7-1me" secondAttribute="trailingMargin" constant="11" id="I6b-wb-qwT"/>
+                            <constraint firstItem="iSn-J7-TsU" firstAttribute="top" secondItem="b7y-dW-U1q" secondAttribute="top" id="JHb-9k-nD2"/>
+                            <constraint firstItem="iSn-J7-TsU" firstAttribute="top" secondItem="O8g-UG-edS" secondAttribute="top" constant="55" id="R6h-K9-dPf"/>
+                            <constraint firstItem="3ry-yZ-MPN" firstAttribute="leading" secondItem="uQn-S7-1me" secondAttribute="leadingMargin" constant="-8" id="Tef-ja-Oyc"/>
+                            <constraint firstItem="O8g-UG-edS" firstAttribute="bottom" secondItem="b7y-dW-U1q" secondAttribute="bottom" constant="713" id="UZH-c0-N9W"/>
+                            <constraint firstItem="b7y-dW-U1q" firstAttribute="leading" secondItem="O8g-UG-edS" secondAttribute="leading" constant="320" id="dOM-fA-kTY"/>
+                            <constraint firstItem="iSn-J7-TsU" firstAttribute="leading" secondItem="O8g-UG-edS" secondAttribute="leading" constant="12" id="hHr-VE-u0U"/>
+                            <constraint firstItem="O8g-UG-edS" firstAttribute="trailing" secondItem="iSn-J7-TsU" secondAttribute="trailing" constant="191" id="syk-pn-CW6"/>
+                            <constraint firstItem="iSn-J7-TsU" firstAttribute="bottom" secondItem="b7y-dW-U1q" secondAttribute="bottom" constant="27" id="v5g-JQ-Awi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O8g-UG-edS"/>
                     </view>

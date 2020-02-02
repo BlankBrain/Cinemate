@@ -67,6 +67,8 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifiar, for: indexPath) as UITableViewCell
         cell.textLabel?.text =  movieSearchResult1.Search[indexPath.row].Title
+        cell.detailTextLabel?.text =  movieSearchResult1.Search[indexPath.row].Year
+
         return cell
     }
     
