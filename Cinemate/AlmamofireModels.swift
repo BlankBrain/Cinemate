@@ -41,54 +41,12 @@ struct Search :Decodable {
         let Poster: String?
 }
 
-struct myStructWithInit {
-    let myString: String?
-    let myInt: Int?
-    let myDouble: Double?
-    
-    init(myString: String? = nil, //👈
-         myInt: Int? = nil,
-         myDouble: Double? = nil) {
-        
-        self.myString = myString
-        self.myInt = myInt
-        self.myDouble = myDouble
-    }
-}
-//// MARK: - Welcome
-//struct movieSearchResult: Decodable {
-//    let search: [Search]
-//    let totalResults, response: String
-//
-//    enum CodingKeys: String, CodingKey {
-//        case search = "Search"
-//        case totalResults
-//        case response = "Response"
-//    }
-//}
-//// MARK: - Search
-//struct Search: Decodable {
-//    let title, year, imdbID: String
-//    let type: TypeEnum
-//    let poster: String
-//
-//    enum CodingKeys: String, CodingKey {
-//        case title = "Title"
-//        case year = "Year"
-//        case imdbID
-//        case type = "Type"
-//        case poster = "Poster"
-//    }
-//}
-//
-//enum TypeEnum: String, Codable {
-//    case movie = "movie"
-//    case series = "series"
-//}
+
 
 
 struct Movie :Decodable{
     
+ 
      let Title: String?
      let Year: String?
      let Rated: String?
@@ -103,7 +61,7 @@ struct Movie :Decodable{
      let Country: String?
      let Awards: String?
      let Poster: String?
-     let Ratings: [movieRatings]
+     let Ratings: [Ratings]
      let Metascore: String?
      let imdbRating: String?
      let imdbVotes: String?
@@ -115,9 +73,65 @@ struct Movie :Decodable{
      let Website: String?
      let Response: String?
     
+    init(
+        
+        
+        
+         Title: String?,
+         Year: String?,
+         Rated: String?,
+         Released: String?,
+         Runtime: String?,
+         Genre: String?,
+         Director: String?,
+         Writer: String?,
+         Actors: String?,
+         Plot: String?,
+         Language: String?,
+         Country: String?,
+         Awards: String?,
+         Poster: String?,
+         Ratings: [Ratings] = [],
+         Metascore: String?,
+         imdbRating: String?,
+         imdbVotes: String?,
+         imdbID: String?,
+         `Type`: String?,
+         DVD: String?,
+         BoxOffice: String?,
+         Production: String?,
+         Website: String?,
+         Response: String?) {
+        self.Title = Title
+        self.Year = Year
+        self.Rated = Rated
+        self.Released = Released
+        self.Runtime = Runtime
+        self.Genre = Genre
+        self.Director = Director
+        self.Writer = Writer
+        self.Actors = Actors
+        self.Plot = Plot
+        self.Language = Language
+        self.Country = Country
+        self.Awards = Awards
+        self.Poster = Poster
+        self.Ratings = Ratings
+        self.Metascore = Metascore
+        self.imdbRating = imdbRating
+        self.imdbVotes = imdbVotes
+        self.imdbID = imdbID
+        self.`Type` = `Type`
+        self.DVD = DVD
+        self.BoxOffice = BoxOffice
+        self.Production = Production
+        self.Website = Website
+        self.Response  = Response
+    }
+    
 }
 
-struct movieRatings :Decodable {
+struct Ratings :Decodable {
     
         let Source: String?
         let Value: String?

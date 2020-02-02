@@ -429,8 +429,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgX-cG-9RE">
-                                <rect key="frame" x="29" y="678" width="42" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Box Office " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgX-cG-9RE">
+                                <rect key="frame" x="29" y="678" width="84" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="MfU-yc-8Ui"/>
                                 </constraints>
@@ -489,7 +489,6 @@
                         <outlet property="imdbRatingLabel" destination="Bgo-iF-6Ra" id="k8z-qy-Vs5"/>
                         <outlet property="plotTextView" destination="eqr-vX-NNU" id="6XD-4E-AlW"/>
                         <outlet property="posterImageView" destination="R19-N8-4uz" id="XDj-hc-Tix"/>
-                        <outlet property="productionLabel" destination="kdW-Dg-tCv" id="fui-Wo-Oqk"/>
                         <outlet property="titleLabel" destination="F5e-vM-DRl" id="kZX-9s-7Ec"/>
                         <outlet property="tomatoesRatingLabel" destination="9hs-B6-gc8" id="F2r-xc-igh"/>
                     </connections>

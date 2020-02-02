@@ -24,6 +24,8 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
     var courses = [Course]()
     var movieSearchResult1 = movieSearchResult(Response: "hellp")
     var url:String = "http://www.omdbapi.com/?apikey=df031d45&"
+    var selectedMovieImdbId = "tt3896198"
+
     
     var movies = [Movie]()
 
@@ -67,11 +69,18 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
         cell.textLabel?.text =  movieSearchResult1.Search[indexPath.row].Title
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(movieSearchResult1.Search[indexPath.row].Year)
+        
+        self.selectedMovieImdbId = movieSearchResult1.Search[indexPath.row].imdbID ?? "tt3896198"
+        self.performSegue(withIdentifier: "searchResultDetails", sender: self)
 
        }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let SearchResultViewController = segue.destination as? SearchResultViewController else {return}
+        SearchResultViewController.selectedMovieImdbId = self.selectedMovieImdbId
+
+    }
     
     
     }
