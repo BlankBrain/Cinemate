@@ -40,9 +40,9 @@ class SearchResultViewController: UIViewController {
                         self.selectedMovie = selectedMovie
                         self.titleLabel.text = selectedMovie.Title
                         self.dateLabel.text = "Relesed On :" + selectedMovie.Released!
-                        self.imdbRatingLabel.text = "imdb Rating:" + selectedMovie.imdbRating!
-                        self.tomatoesRatingLabel.text = "Rotten Tomatoes :" + selectedMovie.Ratings[1].Value!
-                        self.MetacriticRatingLabel.text = "Meta Score"  + selectedMovie.Metascore!
+                        self.imdbRatingLabel.text = selectedMovie.imdbRating!
+                        self.tomatoesRatingLabel.text = selectedMovie.Ratings[1].Value
+                        self.MetacriticRatingLabel.text = selectedMovie.Metascore!
                         self.plotTextView.text = selectedMovie.Plot
                         self.actorsTextView.text = "Actors :" + selectedMovie.Actors!
                         self.boxOfficeLabel.text = selectedMovie.BoxOffice
