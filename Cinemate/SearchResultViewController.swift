@@ -26,40 +26,46 @@ class SearchResultViewController: UIViewController {
     let decoder = JSONDecoder()
     var selectedMovie = Movie(Title: "", Year: "", Rated: "", Released: "", Runtime: "", Genre: "", Director: "", Writer: "", Actors: "", Plot: "", Language: "", Country: "", Awards: "", Poster: "", Metascore: "", imdbRating: "", imdbVotes: "", imdbID: "", Type: "", DVD: "", BoxOffice: "", Production: "", Website: "", Response: " ")
     
-    
+    // MARK: viewRelated
     override func viewDidLoad() {
-        AF.request(url + selectedMovieImdbId).responseJSON{ response in
-            
-                    do{
-                     
-                        let selectedMovie = try self.decoder.decode(Movie.self , from: response.data! )
-                      //  self.movieSearchResult1 = movieSearchResult1
-              //object where the data will be saved >>    decoder method. decode ( model , from data object )
-
-                        print(selectedMovie)
-                        self.selectedMovie = selectedMovie
-                        self.titleLabel.text = selectedMovie.Title
-                        self.dateLabel.text = "Relesed On :" + selectedMovie.Released!
-                        self.imdbRatingLabel.text = selectedMovie.imdbRating!
-                        self.tomatoesRatingLabel.text = selectedMovie.Ratings[1].Value ?? "N/A"
-                        self.MetacriticRatingLabel.text = selectedMovie.Metascore!
-                        self.plotTextView.text = selectedMovie.Plot
-                        self.actorsTextView.text = "Actors :" + selectedMovie.Actors!
-                        self.boxOfficeLabel.text = selectedMovie.BoxOffice
-                        let fileUrl = URL(string: selectedMovie.Poster!)
-                        UIImage.downloadFromRemoteURL(fileUrl!, completion: { image, error in
-                            guard let image = image, error == nil else { print(error);return }
-                            self.posterImageView.image = image
-                        })
-                    }catch{
-                        print("error parsing json data")  }
-
-                    }
+        loadMovieDetails()
         super.viewDidLoad()
 
     }
     
+    func loadMovieDetails()  {
+        AF.request(url + selectedMovieImdbId).responseJSON{ response in
+        
+                do{
+                 
+                    let selectedMovie = try self.decoder.decode(Movie.self , from: response.data! )
+                   //  self.movieSearchResult1 = movieSearchResult1
+                   //object where the data will be saved >>    decoder method. decode ( model , from data object )
 
+                    print(selectedMovie)
+                    self.selectedMovie = selectedMovie
+                    self.titleLabel.text = selectedMovie.Title
+                    self.dateLabel.text = "Relesed On :" + selectedMovie.Released!
+                    if(selectedMovie.imdbRating != "" && selectedMovie.Metascore != "" && selectedMovie.Ratings[1].Value != ""){
+
+                        self.imdbRatingLabel.text = selectedMovie.imdbRating!
+                        self.tomatoesRatingLabel.text = selectedMovie.Ratings[1].Value ?? "N/A"
+                        self.MetacriticRatingLabel.text = selectedMovie.Metascore!
+                    }
+                    
+                    self.plotTextView.text = selectedMovie.Plot
+                    self.actorsTextView.text = "Actors :" + selectedMovie.Actors!
+                    self.boxOfficeLabel.text = selectedMovie.BoxOffice
+                    let fileUrl = URL(string: selectedMovie.Poster!)
+                    UIImage.downloadFromRemoteURL(fileUrl!, completion: { image, error in
+                        guard let image = image, error == nil else { print(error);return }
+                        self.posterImageView.image = image
+                    })
+                }catch{
+                    print("error parsing json data")  }
+
+                }
+    }
 
 
 }
