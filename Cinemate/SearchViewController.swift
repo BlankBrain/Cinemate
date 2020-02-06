@@ -10,13 +10,17 @@ import UIKit
 import Alamofire
 import CoreData
 
-class SearchViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
+class SearchViewController: UIViewController , UITableViewDelegate , UITableViewDataSource ,UIPickerViewDelegate, UIPickerViewDataSource{
 
     
    //=================== var ============================
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var searchInput: UITextField!
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var releseYear: UITextField!
+    
+    var pickerData: [String] = [String]()
     var numberOfCellsTable:Int = 0
     let cellIdentifiar : String = "cell"
     let decoder = JSONDecoder()
@@ -25,8 +29,9 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
     var movieSearchResult1 = movieSearchResult(Response: "hellp")
     var url:String = "http://www.omdbapi.com/?apikey=df031d45&"
     var selectedMovieImdbId = "tt3896198"
+    var pickerValue:String = "movie"
+    var releseYearValue:String = ""
 
-    
     var movies = [Movie]()
 
     
@@ -36,10 +41,15 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
         emailLabel.text = user.email
         tableview.delegate = self
         tableview.dataSource = self
+        self.picker.delegate = self
+        self.picker.dataSource = self
+        pickerData = ["movie", "series", "episode"]
+
     }
     
 
     @IBAction func searchClicked(_ sender: Any) {
+
         let tempUrl = urlMaker(url: self.searchInput.text ?? "")
         AF.request(url + "s=" + tempUrl).responseJSON{ response in
             
@@ -79,10 +89,40 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
         self.performSegue(withIdentifier: "searchResultDetails", sender: self)
 
        }
+    //================== picker ==============
+    override func didReceiveMemoryWarning() {
+           super.didReceiveMemoryWarning()
+           // Dispose of any resources that can be recreated.
+       }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // This method is triggered whenever the user makes a change to the picker selection.
+        // The parameter named row and component represents what was selected.
+        print(pickerData[row])
+        self.pickerValue = pickerData[row]
+    }
+    // Number of columns of data
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+     
+       // The number of rows of data
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+         return pickerData.count
+    }
+       // The data to return fopr the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    //=================== func ===============
     
     func urlMaker(url:String) -> String {
+        self.releseYearValue = releseYear.text!
+        let searchType:String = "&type=" + pickerValue
+        let SearchYear:String = "&y=" + releseYearValue
         let newString = url.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
-        return newString
+        return newString + searchType + SearchYear 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
