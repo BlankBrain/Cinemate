@@ -40,7 +40,8 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
     
 
     @IBAction func searchClicked(_ sender: Any) {
-        AF.request(url + "s=" + (self.searchInput.text ?? "")).responseJSON{ response in
+        let tempUrl = urlMaker(url: self.searchInput.text ?? "")
+        AF.request(url + "s=" + tempUrl).responseJSON{ response in
             
                     do{
                      
@@ -78,6 +79,12 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
         self.performSegue(withIdentifier: "searchResultDetails", sender: self)
 
        }
+    
+    func urlMaker(url:String) -> String {
+        let newString = url.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
+        return newString
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let SearchResultViewController = segue.destination as? SearchResultViewController else {return}
         SearchResultViewController.selectedMovieImdbId = self.selectedMovieImdbId
