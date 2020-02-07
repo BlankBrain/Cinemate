@@ -41,11 +41,11 @@ class LoginViewController: UIViewController {
                         print(authDataResult.user.email ?? "missing user info")
                         
                         // ================ coredata user save ============
-        //                let userChangeRequest = authDataResult.user.createProfileChangeRequest()
-        //                userChangeRequest.displayName = self.emailInput.text
-        //
                         self.temp.email = authDataResult.user.email
-                       PersistanceService.saveContext()
+                       // self.deleteAllUsers()
+                        PersistanceService.saveContext()
+
+                        self.showAllUsers()
                         //================= segue ======================
                         
                         self.performSegue(withIdentifier: "logIn", sender: self)
@@ -80,6 +80,34 @@ class LoginViewController: UIViewController {
             return false
         }
     }
+    func showAllUsers()  {
+        let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
+        do{
+          let users = try PersistanceService.context.fetch(fetchRequest)
+            print(users.count)
+            for item in users{
+                print(item.email)
+            }
+
+        }catch{
+            print("error loading previous data !")
+        }
+    }
+    func deleteAllUsers()  {
+        let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
+        do{
+            let users = try PersistanceService.context.fetch(fetchRequest)
+            print(users.count)
+            for item in users{
+                PersistanceService.context.delete(item)
+                 PersistanceService.saveContext()
+            }
+        }catch{
+            print("error loading previous data !")
+        }
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let HomeViewController = segue.destination as? HomeViewController else {return}
         HomeViewController.user = self.temp

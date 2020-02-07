@@ -21,6 +21,7 @@ class SearchResultViewController: UIViewController {
     @IBOutlet weak var actorsTextView: UITextView!
     @IBOutlet var productionLabel: UIView!
     @IBOutlet weak var boxOfficeLabel: UILabel!
+    
     var selectedMovieImdbId = "tt3896198"
     var url:String = "http://www.omdbapi.com/?apikey=df031d45&i="
     let decoder = JSONDecoder()
@@ -102,7 +103,12 @@ class SearchResultViewController: UIViewController {
                 }
     }
 
-
+    @IBAction func addMovieClicked(_ sender: Any) {
+        
+    }
+    
+    
+    
 }
 extension UIImage {
     static func downloadFromRemoteURL(_ url: URL, completion: @escaping (UIImage?,Error?)->()) {

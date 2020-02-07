@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="SavedMovie" representedClassName="SavedMovie" syncable="YES">
+        <attribute name="actors" optional="YES" attributeType="String"/>
+        <attribute name="box" optional="YES" attributeType="String"/>
+        <attribute name="imdb" optional="YES" attributeType="String"/>
+        <attribute name="meta" optional="YES" attributeType="String"/>
+        <attribute name="plot" optional="YES" attributeType="String"/>
+        <attribute name="relese" optional="YES" attributeType="String"/>
+        <attribute name="rt" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="user" optional="YES" attributeType="String"/>
+        <relationship name="has" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="owns" inverseEntity="User"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>
+        <relationship name="owns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SavedMovie" inverseName="has" inverseEntity="SavedMovie"/>
     </entity>
     <elements>
-        <element name="User" positionX="-54" positionY="-9" width="128" height="58"/>
+        <element name="User" positionX="-54" positionY="-9" width="128" height="73"/>
+        <element name="SavedMovie" positionX="-54" positionY="0" width="128" height="193"/>
     </elements>
 </model>

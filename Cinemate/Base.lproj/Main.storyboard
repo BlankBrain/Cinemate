@@ -522,6 +522,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaT-M3-sus">
+                                <rect key="frame" x="224" y="753" width="165" height="40"/>
+                                <color key="backgroundColor" red="0.29535446580000002" green="0.78039215689999997" blue="0.69403623209999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cuB-D9-WFy"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Add to my movies" image="plus.circle.fill" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addMovieClicked:" destination="AsR-S8-L8w" eventType="touchUpInside" id="7Xg-As-8jn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -540,6 +554,7 @@
                             <constraint firstItem="xNP-o6-qa8" firstAttribute="trailing" secondItem="Bgo-iF-6Ra" secondAttribute="trailing" id="Piz-47-i8z"/>
                             <constraint firstItem="9hs-B6-gc8" firstAttribute="firstBaseline" secondItem="BFx-RV-dUI" secondAttribute="firstBaseline" id="SO5-Oc-d53"/>
                             <constraint firstItem="R19-N8-4uz" firstAttribute="trailing" secondItem="kdW-Dg-tCv" secondAttribute="trailingMargin" id="SvB-SO-oAa"/>
+                            <constraint firstItem="Hzv-9K-Sdk" firstAttribute="trailing" secondItem="JaT-M3-sus" secondAttribute="trailing" constant="25" id="V2i-Pf-brA"/>
                             <constraint firstItem="Hzv-9K-Sdk" firstAttribute="trailing" secondItem="IbS-Ge-F4a" secondAttribute="trailing" constant="27" id="ZjH-4J-sQz"/>
                             <constraint firstItem="Bgo-iF-6Ra" firstAttribute="firstBaseline" secondItem="9hs-B6-gc8" secondAttribute="firstBaseline" id="ajq-IN-0sf"/>
                             <constraint firstItem="9hs-B6-gc8" firstAttribute="baseline" secondItem="BFx-RV-dUI" secondAttribute="baseline" id="bSs-BC-KHr"/>
@@ -551,6 +566,7 @@
                             <constraint firstItem="ZgX-cG-9RE" firstAttribute="leading" secondItem="nNs-Jn-AQa" secondAttribute="leading" id="hGc-Bx-iit"/>
                             <constraint firstItem="F5e-vM-DRl" firstAttribute="leading" secondItem="agP-PZ-50I" secondAttribute="leading" id="iW8-UJ-twC"/>
                             <constraint firstItem="eqr-vX-NNU" firstAttribute="top" secondItem="Bgo-iF-6Ra" secondAttribute="bottom" constant="8" id="im5-sy-xic"/>
+                            <constraint firstItem="Hzv-9K-Sdk" firstAttribute="bottom" secondItem="JaT-M3-sus" secondAttribute="bottom" constant="15" id="jB8-q4-I9v"/>
                             <constraint firstItem="IbS-Ge-F4a" firstAttribute="leading" secondItem="t4q-YM-spF" secondAttribute="trailing" constant="58" id="jEf-uu-KZ1"/>
                             <constraint firstItem="t4q-YM-spF" firstAttribute="leading" secondItem="xNP-o6-qa8" secondAttribute="trailing" constant="34" id="kBS-at-Z7B"/>
                             <constraint firstItem="t4q-YM-spF" firstAttribute="trailing" secondItem="9hs-B6-gc8" secondAttribute="trailing" id="p4I-F0-7Ag"/>
@@ -581,7 +597,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lb2-hN-eux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3484" y="134"/>
+            <point key="canvasLocation" x="3482.608695652174" y="133.92857142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Lp-PU-qN6">
@@ -603,6 +619,9 @@
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="d5q-gU-UO2"/>
         <segue reference="W2d-Ky-vQ7"/>
