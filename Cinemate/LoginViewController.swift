@@ -42,10 +42,11 @@ class LoginViewController: UIViewController {
                         
                         // ================ coredata user save ============
                         self.temp.email = authDataResult.user.email
-                       // self.deleteAllUsers()
-                        PersistanceService.saveContext()
-
+                      // self.deleteAllUsers()
+                        //PersistanceService.saveContext()
+                        self.userHandeler()
                         self.showAllUsers()
+
                         //================= segue ======================
                         
                         self.performSegue(withIdentifier: "logIn", sender: self)
@@ -64,6 +65,8 @@ class LoginViewController: UIViewController {
         
     }
     
+    //====================================== func ====================================
+    
     func validateEmail(enteredEmail:String) -> Bool {
 
           let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -80,6 +83,26 @@ class LoginViewController: UIViewController {
             return false
         }
     }
+    //================================== coredata func =================================
+    func userHandeler()  {
+              let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "email = %@", emailInput.text!)
+                do{
+                    let users = try PersistanceService.context.fetch(fetchRequest)
+                    if users.first != nil && users.first?.email == emailInput.text{
+                        print("this user already exist !")
+                    }
+                    else{
+                        let userToAdd = User(context: PersistanceService.context)
+                        userToAdd.email = emailInput.text ?? ""
+                        PersistanceService.saveContext()
+                        self.showAllUsers()
+                    }
+                }catch{
+                    print("error loading users !")
+                }
+    }
+    
     func showAllUsers()  {
         let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
         do{
@@ -103,11 +126,11 @@ class LoginViewController: UIViewController {
                  PersistanceService.saveContext()
             }
         }catch{
-            print("error loading previous data !")
+            print("error deleting users !")
         }
         
     }
-    
+    // =============================== segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let HomeViewController = segue.destination as? HomeViewController else {return}
         HomeViewController.user = self.temp
