@@ -44,21 +44,56 @@ class SearchResultViewController: UIViewController {
 
                     print(selectedMovie)
                     self.selectedMovie = selectedMovie
-                    self.titleLabel.text = selectedMovie.Title
-                    self.dateLabel.text = "Relesed On :" + selectedMovie.Released!
-                    if(selectedMovie.imdbRating != "" && selectedMovie.Metascore != "" && selectedMovie.Ratings[1].Value != ""){
-
-                        self.imdbRatingLabel.text = selectedMovie.imdbRating!
-                        self.tomatoesRatingLabel.text = selectedMovie.Ratings[1].Value ?? "N/A"
-                        self.MetacriticRatingLabel.text = selectedMovie.Metascore!
+                    //title
+                    if selectedMovie.Title != nil {
+                        self.titleLabel.text =  selectedMovie.Title
+                    }else{
+                        self.titleLabel.text = "Title not found"
                     }
-                    
-                    self.plotTextView.text = selectedMovie.Plot
-                    self.actorsTextView.text = "Actors :" + selectedMovie.Actors!
-                    self.boxOfficeLabel.text = selectedMovie.BoxOffice
+                    //relese date
+                    if selectedMovie.Released != nil {
+                        self.dateLabel.text = "Relesed On :" + selectedMovie.Released!
+                        }else{
+                        self.dateLabel.text  = "Relese date not found"
+                    }
+                    // ratings
+                    if selectedMovie.imdbRating != nil {
+                        self.imdbRatingLabel.text = selectedMovie.imdbRating!
+                    }else{
+                        self.imdbRatingLabel.text = "N/A"
+                    }
+                    if selectedMovie.Ratings.count > 1 {
+                        self.tomatoesRatingLabel.text = selectedMovie.Ratings[1].Value ?? "N/A"
+                    }else{
+                        self.tomatoesRatingLabel.text = "N/A"
+                    }
+                    if selectedMovie.Metascore  != nil {
+                        self.MetacriticRatingLabel.text = selectedMovie.Metascore!
+                    }else{
+                        self.MetacriticRatingLabel.text = "N/A"
+                    }
+
+                    //plot
+                    if selectedMovie.Plot  != nil {
+                        self.plotTextView.text = selectedMovie.Plot
+                    }else{
+                        self.plotTextView.text = "Plot not found !"
+                    }
+                    //actors
+                    if selectedMovie.Actors  != nil {
+                        self.actorsTextView.text = "Actors :" + selectedMovie.Actors!
+                    }else{
+                        self.actorsTextView.text = "Plot not found !"
+                    }
+                    //box office
+                    if selectedMovie.BoxOffice  != nil {
+                        self.boxOfficeLabel.text = selectedMovie.BoxOffice
+                    }else{
+                        self.boxOfficeLabel.text = "N/A"
+                    }
                     let fileUrl = URL(string: selectedMovie.Poster!)
                     UIImage.downloadFromRemoteURL(fileUrl!, completion: { image, error in
-                        guard let image = image, error == nil else { print(error);return }
+                        guard let image = image, error == nil else { print(error ?? "Poster error !");return }
                         self.posterImageView.image = image
                     })
                 }catch{

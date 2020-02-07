@@ -54,6 +54,7 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
         AF.request(url + "s=" + tempUrl).responseJSON{ response in
             
                     do{
+                        // empty response handel
                      
                         let movieSearchResult1 = try self.decoder.decode(movieSearchResult.self , from: response.data! )
                       //  self.movieSearchResult1 = movieSearchResult1
