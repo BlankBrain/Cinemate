@@ -25,6 +25,7 @@
 		73992B2523E2E5B6001C6D83 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B2423E2E5B6001C6D83 /* SearchViewController.swift */; };
 		73992B2723E2E5CF001C6D83 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992B2623E2E5CF001C6D83 /* SearchResultViewController.swift */; };
 		73992B2B23E2F9B7001C6D83 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73992B2A23E2F9B7001C6D83 /* GoogleService-Info.plist */; };
+		73AD414023EFFC020042E505 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD413F23EFFC010042E505 /* MapViewController.swift */; };
 		73C8AFBC23E31CC600DBA97A /* AlartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8AFBB23E31CC600DBA97A /* AlartController.swift */; };
 		73C8AFC823E3362900DBA97A /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8AFC623E3362900DBA97A /* User+CoreDataClass.swift */; };
 		73C8AFC923E3362900DBA97A /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8AFC723E3362900DBA97A /* User+CoreDataProperties.swift */; };
@@ -74,6 +75,7 @@
 		73992B2423E2E5B6001C6D83 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		73992B2623E2E5CF001C6D83 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		73992B2A23E2F9B7001C6D83 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73AD413F23EFFC010042E505 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		73C8AFBB23E31CC600DBA97A /* AlartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlartController.swift; sourceTree = "<group>"; };
 		73C8AFC623E3362900DBA97A /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		73C8AFC723E3362900DBA97A /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -192,6 +194,7 @@
 				73992B1C23E2DD59001C6D83 /* LoginViewController.swift */,
 				73992B2423E2E5B6001C6D83 /* SearchViewController.swift */,
 				73992B2623E2E5CF001C6D83 /* SearchResultViewController.swift */,
+				73AD413F23EFFC010042E505 /* MapViewController.swift */,
 			);
 			name = Viewcontrollers;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				73C8AFC823E3362900DBA97A /* User+CoreDataClass.swift in Sources */,
 				73992B2323E2E5A3001C6D83 /* HomeViewController.swift in Sources */,
 				73992B1F23E2E45C001C6D83 /* PersistanceService.swift in Sources */,
+				73AD414023EFFC020042E505 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

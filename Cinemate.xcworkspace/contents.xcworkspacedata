@@ -2,13 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/mehed1hasan/Desktop/Training/Cinemate/Cinemate/SavedMovie+CoreDataClass.swift">
+      location = "group:SavedMovie+CoreDataProperties.swift">
    </FileRef>
    <FileRef
-      location = "group:Cinemate/SavedMovie+CoreDataProperties.swift">
+      location = "group:User+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:Cinemate/User+CoreDataProperties.swift">
+      location = "group:User+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SavedMovie+CoreDataClass.swift">
    </FileRef>
    <FileRef
       location = "group:Cinemate.xcodeproj">
