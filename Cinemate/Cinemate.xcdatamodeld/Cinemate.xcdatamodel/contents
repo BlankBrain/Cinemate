@@ -4,8 +4,10 @@
         <attribute name="actors" optional="YES" attributeType="String"/>
         <attribute name="box" optional="YES" attributeType="String"/>
         <attribute name="imdb" optional="YES" attributeType="String"/>
+        <attribute name="imdbid" optional="YES" attributeType="String"/>
         <attribute name="meta" optional="YES" attributeType="String"/>
         <attribute name="plot" optional="YES" attributeType="String"/>
+        <attribute name="poster" optional="YES" attributeType="String"/>
         <attribute name="relese" optional="YES" attributeType="String"/>
         <attribute name="rt" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
@@ -17,7 +19,7 @@
         <relationship name="owns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SavedMovie" inverseName="has" inverseEntity="SavedMovie"/>
     </entity>
     <elements>
+        <element name="SavedMovie" positionX="-54" positionY="0" width="128" height="223"/>
         <element name="User" positionX="-54" positionY="-9" width="128" height="73"/>
-        <element name="SavedMovie" positionX="-54" positionY="0" width="128" height="193"/>
     </elements>
 </model>

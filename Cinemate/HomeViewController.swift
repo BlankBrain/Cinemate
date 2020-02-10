@@ -12,7 +12,7 @@ import CoreData
 class HomeViewController: UIViewController {
 
     var user = User(context: PersistanceService.context)
-    
+    var savedMovies = [SavedMovie]()
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var tableview: UITableView!
     var numberOfCellsTable:Int = 0
@@ -24,6 +24,9 @@ class HomeViewController: UIViewController {
         tableview.delegate = self
         tableview.dataSource = self
         emailLabel.text = user.email
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        tableview.reloadData()
     }
     
     @IBAction func logOutClicked(_ sender: Any) {
@@ -52,13 +55,24 @@ class HomeViewController: UIViewController {
 }
 extension HomeViewController :  UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        numberOfCellsTable = 1
+        
+         let fetchRequest : NSFetchRequest<SavedMovie> = SavedMovie.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "user = %@", user.email ?? "")
+
+             do{
+               let savedMovies = try PersistanceService.context.fetch(fetchRequest)
+                self.savedMovies = savedMovies
+                numberOfCellsTable = savedMovies.count
+
+             }catch{
+                 print("error loading previous data !")
+             }
         return numberOfCellsTable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifiar, for: indexPath) as UITableViewCell
-        cell.textLabel?.text =  "movie title"
+        cell.textLabel?.text =  savedMovies[indexPath.row].title 
 
 
         return cell

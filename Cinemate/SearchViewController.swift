@@ -130,6 +130,8 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let SearchResultViewController = segue.destination as? SearchResultViewController else {return}
         SearchResultViewController.selectedMovieImdbId = self.selectedMovieImdbId
+        SearchResultViewController.user = self.user
+
 
     }
     

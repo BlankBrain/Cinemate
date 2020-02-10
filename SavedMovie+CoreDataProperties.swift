@@ -17,15 +17,17 @@ extension SavedMovie {
         return NSFetchRequest<SavedMovie>(entityName: "SavedMovie")
     }
 
-    @NSManaged public var user: String?
-    @NSManaged public var title: String?
-    @NSManaged public var relese: String?
-    @NSManaged public var imdb: String?
-    @NSManaged public var rt: String?
-    @NSManaged public var meta: String?
-    @NSManaged public var plot: String?
     @NSManaged public var actors: String?
     @NSManaged public var box: String?
+    @NSManaged public var imdb: String?
+    @NSManaged public var meta: String?
+    @NSManaged public var plot: String?
+    @NSManaged public var relese: String?
+    @NSManaged public var rt: String?
+    @NSManaged public var title: String?
+    @NSManaged public var user: String?
+    @NSManaged public var imdbid: String?
+    @NSManaged public var poster: String?
     @NSManaged public var has: User?
 
 }

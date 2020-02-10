@@ -21,7 +21,9 @@ class SearchResultViewController: UIViewController {
     @IBOutlet weak var actorsTextView: UITextView!
     @IBOutlet var productionLabel: UIView!
     @IBOutlet weak var boxOfficeLabel: UILabel!
-    
+    var user = User(context: PersistanceService.context)
+    var savedMovie = SavedMovie(context: PersistanceService.context)
+
     var selectedMovieImdbId = "tt3896198"
     var url:String = "http://www.omdbapi.com/?apikey=df031d45&i="
     let decoder = JSONDecoder()
@@ -104,6 +106,21 @@ class SearchResultViewController: UIViewController {
     }
 
     @IBAction func addMovieClicked(_ sender: Any) {
+        savedMovie.user = user.email
+        savedMovie.title = selectedMovie.Title
+        savedMovie.imdb = selectedMovie.imdbRating
+        savedMovie.relese = selectedMovie.Released
+        savedMovie.rt = selectedMovie.Ratings[1].Value ?? "N/A"
+        savedMovie.meta = selectedMovie.Metascore
+        savedMovie.plot = selectedMovie.Plot
+        savedMovie.actors = selectedMovie.Actors
+        savedMovie.box = selectedMovie.BoxOffice
+        savedMovie.imdbid = selectedMovie.imdbID
+        savedMovie.poster = selectedMovie.Poster
+        user.addToOwns(savedMovie)
+        PersistanceService.saveContext()
+        AlartController.showAlart(self, title: "Movie added!", message: "Movie added to My list")
+        
         
     }
     
