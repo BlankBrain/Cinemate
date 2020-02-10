@@ -25,6 +25,7 @@ class SearchViewController: UIViewController , UITableViewDelegate , UITableView
     let cellIdentifiar : String = "cell"
     let decoder = JSONDecoder()
     var user = User(context: PersistanceService.context)
+
     var courses = [Course]()
     var movieSearchResult1 = movieSearchResult(Response: "hellp")
     var url:String = "http://www.omdbapi.com/?apikey=df031d45&"

@@ -245,7 +245,6 @@
                                 </state>
                                 <connections>
                                     <action selector="findTheaterClicked:" destination="sUO-4F-Qqq" eventType="touchUpInside" id="C5F-As-bnw"/>
-                                    <action selector="searchMovieClicked:" destination="sUO-4F-Qqq" eventType="touchUpInside" id="XPR-V6-gDu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Movies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjG-rR-ixd">
@@ -317,26 +316,75 @@
                         <outlet property="tableview" destination="hSP-On-8MB" id="DkB-Yo-ZiJ"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="logOut" id="W2d-Ky-vQ7"/>
                         <segue destination="tby-aN-5Ig" kind="show" identifier="searchResult" id="ggN-NZ-H0M"/>
+                        <segue destination="5f7-Jv-Y1v" kind="show" identifier="homeToMap" id="ExP-cl-iaA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKU-6r-SI8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2001.449275362319" y="133.92857142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="gMy-5l-HnF">
             <objects>
-                <viewController id="5f7-Jv-Y1v" sceneMemberID="viewController">
+                <viewController id="5f7-Jv-Y1v" customClass="MapViewController" customModule="Cinemate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1QZ-fE-bBL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uc4-bw-6hZ">
+                                <rect key="frame" x="0.0" y="104" width="414" height="483"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jge-jS-3Rd">
+                                <rect key="frame" x="9" y="60" width="113" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Cz4-X9-nYC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poM-Za-cU5">
+                                <rect key="frame" x="25" y="612" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYa-Ef-T1e">
+                                <rect key="frame" x="352" y="612" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WM0-3F-Oyx">
+                                <rect key="frame" x="25" y="686" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WM0-3F-Oyx" firstAttribute="leading" secondItem="poM-Za-cU5" secondAttribute="leading" id="RtS-LY-kXc"/>
+                            <constraint firstItem="poM-Za-cU5" firstAttribute="top" secondItem="uc4-bw-6hZ" secondAttribute="bottom" constant="25" id="Wj4-p5-AMb"/>
+                            <constraint firstItem="WM0-3F-Oyx" firstAttribute="top" secondItem="poM-Za-cU5" secondAttribute="bottom" constant="53" id="a0c-B7-BBX"/>
+                            <constraint firstItem="jge-jS-3Rd" firstAttribute="leading" secondItem="J0q-Pb-18V" secondAttribute="leading" constant="9" id="dun-FR-nM6"/>
+                            <constraint firstItem="J0q-Pb-18V" firstAttribute="trailing" secondItem="GYa-Ef-T1e" secondAttribute="trailing" constant="13" id="duu-rN-g3w"/>
+                            <constraint firstItem="jge-jS-3Rd" firstAttribute="top" secondItem="J0q-Pb-18V" secondAttribute="top" constant="60" id="eOH-cL-wUH"/>
+                            <constraint firstItem="J0q-Pb-18V" firstAttribute="bottom" secondItem="uc4-bw-6hZ" secondAttribute="bottom" constant="221" id="h3j-sw-ese"/>
+                            <constraint firstItem="uc4-bw-6hZ" firstAttribute="centerX" secondItem="1QZ-fE-bBL" secondAttribute="centerX" id="jUp-8m-wlv"/>
+                            <constraint firstItem="poM-Za-cU5" firstAttribute="leading" secondItem="J0q-Pb-18V" secondAttribute="leading" constant="25" id="nlY-VX-1H7"/>
+                            <constraint firstItem="uc4-bw-6hZ" firstAttribute="leading" secondItem="J0q-Pb-18V" secondAttribute="leading" id="vUF-mj-IaC"/>
+                            <constraint firstItem="uc4-bw-6hZ" firstAttribute="top" secondItem="jge-jS-3Rd" secondAttribute="bottom" constant="8" id="wJ9-Yr-xVD"/>
+                            <constraint firstItem="J0q-Pb-18V" firstAttribute="trailing" secondItem="jge-jS-3Rd" secondAttribute="trailing" constant="292" id="yhX-wQ-8kI"/>
+                            <constraint firstItem="GYa-Ef-T1e" firstAttribute="baseline" secondItem="poM-Za-cU5" secondAttribute="baseline" id="zMy-Eb-0Hb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="J0q-Pb-18V"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6xT-Dg-kxl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9wA-vM-4eK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2001" y="865"/>
+            <point key="canvasLocation" x="2000.0000000000002" y="864.50892857142856"/>
         </scene>
         <!--Find Movie-->
         <scene sceneID="9Vv-jD-6rn">
@@ -474,7 +522,7 @@
             </objects>
             <point key="canvasLocation" x="2750.7246376811595" y="133.92857142857142"/>
         </scene>
-        <!--Here you Go-->
+        <!--Search Result-->
         <scene sceneID="VM9-JP-UkK">
             <objects>
                 <viewController id="AsR-S8-L8w" customClass="SearchResultViewController" customModule="Cinemate" customModuleProvider="target" sceneMemberID="viewController">
@@ -643,7 +691,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hzv-9K-Sdk"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Here you Go" id="zBM-TA-gjz"/>
+                    <navigationItem key="navigationItem" title="Search Result" id="zBM-TA-gjz"/>
                     <connections>
                         <outlet property="MetacriticRatingLabel" destination="BFx-RV-dUI" id="BUL-yg-e5b"/>
                         <outlet property="actorsTextView" destination="wVv-wL-utD" id="5pK-c9-hW3"/>

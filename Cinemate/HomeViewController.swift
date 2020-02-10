@@ -38,7 +38,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func findTheaterClicked(_ sender: Any) {
-        
+        self.performSegue(withIdentifier: "homeToMap", sender: self)
+
     }
     
     
