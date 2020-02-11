@@ -28,6 +28,7 @@
 		73AD414023EFFC020042E505 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD413F23EFFC010042E505 /* MapViewController.swift */; };
 		73AD414323F158BE0042E505 /* SavedMovie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD414123F158BE0042E505 /* SavedMovie+CoreDataClass.swift */; };
 		73AD414423F158BE0042E505 /* SavedMovie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD414223F158BE0042E505 /* SavedMovie+CoreDataProperties.swift */; };
+		73AD414A23F29EDF0042E505 /* MyMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AD414923F29EDF0042E505 /* MyMovieDetailViewController.swift */; };
 		73C8AFBC23E31CC600DBA97A /* AlartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8AFBB23E31CC600DBA97A /* AlartController.swift */; };
 		73C8AFC823E3362900DBA97A /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8AFC623E3362900DBA97A /* User+CoreDataClass.swift */; };
 		73C8AFC923E3362900DBA97A /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8AFC723E3362900DBA97A /* User+CoreDataProperties.swift */; };
@@ -80,6 +81,7 @@
 		73AD413F23EFFC010042E505 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		73AD414123F158BE0042E505 /* SavedMovie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedMovie+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		73AD414223F158BE0042E505 /* SavedMovie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedMovie+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		73AD414923F29EDF0042E505 /* MyMovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieDetailViewController.swift; sourceTree = "<group>"; };
 		73C8AFBB23E31CC600DBA97A /* AlartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlartController.swift; sourceTree = "<group>"; };
 		73C8AFC623E3362900DBA97A /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		73C8AFC723E3362900DBA97A /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -199,6 +201,7 @@
 				73992B2423E2E5B6001C6D83 /* SearchViewController.swift */,
 				73992B2623E2E5CF001C6D83 /* SearchResultViewController.swift */,
 				73AD413F23EFFC010042E505 /* MapViewController.swift */,
+				73AD414923F29EDF0042E505 /* MyMovieDetailViewController.swift */,
 			);
 			name = Viewcontrollers;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				73C8AFCC23E44AEA00DBA97A /* AlmamofireModels.swift in Sources */,
 				73992B2723E2E5CF001C6D83 /* SearchResultViewController.swift in Sources */,
 				73AD414323F158BE0042E505 /* SavedMovie+CoreDataClass.swift in Sources */,
+				73AD414A23F29EDF0042E505 /* MyMovieDetailViewController.swift in Sources */,
 				73992B1D23E2DD59001C6D83 /* LoginViewController.swift in Sources */,
 				73992B2523E2E5B6001C6D83 /* SearchViewController.swift in Sources */,
 				73992AEA23E2DC93001C6D83 /* AppDelegate.swift in Sources */,

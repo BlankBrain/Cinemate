@@ -9,9 +9,13 @@
 import UIKit
 import CoreData
 
+
+
 class HomeViewController: UIViewController {
 
     var user = User(context: PersistanceService.context)
+    var savedMovie = SavedMovie(context: PersistanceService.context)
+
     var savedMovies = [SavedMovie]()
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var tableview: UITableView!
@@ -51,6 +55,7 @@ class HomeViewController: UIViewController {
         guard let SearchViewController = segue.destination as? SearchViewController else {return}
         SearchViewController.user = self.user
 
+
     }
 }
 extension HomeViewController :  UITableViewDelegate , UITableViewDataSource {
@@ -80,7 +85,12 @@ extension HomeViewController :  UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("item selected at ",  indexPath.row)
+        savedMovie = savedMovies[indexPath.row]
+        print(savedMovie)
+         let name = Notification.Name(rawValue: ObserverViewControllerNotificationKey)
+        NotificationCenter.default.post(name: name, object: self, userInfo: [name: "hello"])
+   //     print()
+        self.performSegue(withIdentifier: "myMovieDetail", sender: self)
 
        }
    
