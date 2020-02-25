@@ -54,7 +54,9 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let SearchViewController = segue.destination as? SearchViewController else {return}
         SearchViewController.user = self.user
-
+        
+        guard let myMovieDetailViewController = segue.destination as? MyMovieDetailViewController else {return}
+        myMovieDetailViewController.createObserver() 
 
     }
 }
@@ -86,11 +88,12 @@ extension HomeViewController :  UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         savedMovie = savedMovies[indexPath.row]
-        print(savedMovie)
-         let name = Notification.Name(rawValue: ObserverViewControllerNotificationKey)
-        NotificationCenter.default.post(name: name, object: self, userInfo: [name: "hello"])
-   //     print()
+        //print(savedMovie)
+        
+        print("Notification called.")
         self.performSegue(withIdentifier: "myMovieDetail", sender: self)
+        let name = Notification.Name(rawValue: ObserverViewControllerNotificationKey)
+        NotificationCenter.default.post(name: name, object: self, userInfo: [name: "hello"])
 
        }
    

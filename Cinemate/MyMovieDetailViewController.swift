@@ -34,12 +34,14 @@ class MyMovieDetailViewController: UIViewController {
         createObserver()
         super.viewDidLoad()
     }
-    
-    func createObserver() {
+    // observer code
+   func createObserver() {
+        print("observer created !")
           NotificationCenter.default.addObserver(self, selector: #selector(MyMovieDetailViewController.updateMovieDetails(notification:)), name: name, object: nil)
       }
       
     @objc func updateMovieDetails(notification: NSNotification) {
+        print("Recieved")
             if notification.name == name {
                 let userInfo = notification.userInfo!
                 let something = userInfo[name]! as! String
