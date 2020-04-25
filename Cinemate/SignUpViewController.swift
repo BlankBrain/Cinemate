@@ -29,6 +29,8 @@ class SignUpViewController: UIViewController {
     }
     //======================= Sign up ==================
     @IBAction func signUpClicked(_ sender: Any) {
+        if ( Connectivity.isConnectedToInternet() == true ){
+        
         if validateEmail(enteredEmail: emailInput.text!) == true  && validatPassword(enteredPassword:
             passwordInput.text!, enteredPassword2: confirmPasswordInput.text!) == true {
             
@@ -66,7 +68,10 @@ class SignUpViewController: UIViewController {
             AlartController.showAlart(self, title: "Error", message: "Incomplete Information!")
         }
         
-        
+        }else{
+            AlartController.showAlart(self, title: "Error", message: "No internet connection !")
+
+        }
     }
     
     func validateEmail(enteredEmail:String) -> Bool {

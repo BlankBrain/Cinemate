@@ -108,9 +108,9 @@ class LoginViewController: UIViewController {
         do{
           let users = try PersistanceService.context.fetch(fetchRequest)
             print(users.count)
-            for item in users{
-                print(item.email)
-            }
+//            for item in users{
+//                print(item.email)
+//            }
 
         }catch{
             print("error loading previous data !")

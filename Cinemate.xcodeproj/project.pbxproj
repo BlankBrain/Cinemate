@@ -13,6 +13,8 @@
 		734E75F5244AD956007EBFEB /* myRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E75F4244AD956007EBFEB /* myRoundButton.swift */; };
 		734E75F6244AD956007EBFEB /* myRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E75F4244AD956007EBFEB /* myRoundButton.swift */; };
 		734E75F7244AD956007EBFEB /* myRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E75F4244AD956007EBFEB /* myRoundButton.swift */; };
+		734E75F9245489EC007EBFEB /* CheckNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E75F8245489EC007EBFEB /* CheckNetwork.swift */; };
+		734E75FB24548BA3007EBFEB /* TempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E75FA24548BA3007EBFEB /* TempData.swift */; };
 		73992AEA23E2DC93001C6D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992AE923E2DC93001C6D83 /* AppDelegate.swift */; };
 		73992AEC23E2DC93001C6D83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992AEB23E2DC93001C6D83 /* SceneDelegate.swift */; };
 		73992AF123E2DC93001C6D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73992AEF23E2DC93001C6D83 /* Main.storyboard */; };
@@ -61,6 +63,8 @@
 		64028FB7736A14633C359EA7 /* Pods-Cinemate-CinemateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinemate-CinemateUITests.release.xcconfig"; path = "Target Support Files/Pods-Cinemate-CinemateUITests/Pods-Cinemate-CinemateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6D6B6FB5E0C277E7B4B4B555 /* Pods_CinemateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CinemateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		734E75F4244AD956007EBFEB /* myRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myRoundButton.swift; sourceTree = "<group>"; };
+		734E75F8245489EC007EBFEB /* CheckNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNetwork.swift; sourceTree = "<group>"; };
+		734E75FA24548BA3007EBFEB /* TempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempData.swift; sourceTree = "<group>"; };
 		73992AE623E2DC93001C6D83 /* Cinemate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73992AE923E2DC93001C6D83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73992AEB23E2DC93001C6D83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 				73C8AFC723E3362900DBA97A /* User+CoreDataProperties.swift */,
 				73992B1E23E2E45C001C6D83 /* PersistanceService.swift */,
 				73C8AFBB23E31CC600DBA97A /* AlartController.swift */,
+				734E75F8245489EC007EBFEB /* CheckNetwork.swift */,
+				734E75FA24548BA3007EBFEB /* TempData.swift */,
 			);
 			name = "Static func";
 			sourceTree = "<group>";
@@ -493,11 +499,13 @@
 				73C8AFBC23E31CC600DBA97A /* AlartController.swift in Sources */,
 				73992B2123E2E576001C6D83 /* SignUpViewController.swift in Sources */,
 				734E75F5244AD956007EBFEB /* myRoundButton.swift in Sources */,
+				734E75F9245489EC007EBFEB /* CheckNetwork.swift in Sources */,
 				73C8AFC923E3362900DBA97A /* User+CoreDataProperties.swift in Sources */,
 				73C8AFCC23E44AEA00DBA97A /* AlmamofireModels.swift in Sources */,
 				73992B2723E2E5CF001C6D83 /* SearchResultViewController.swift in Sources */,
 				73AD414323F158BE0042E505 /* SavedMovie+CoreDataClass.swift in Sources */,
 				73AD414A23F29EDF0042E505 /* MyMovieDetailViewController.swift in Sources */,
+				734E75FB24548BA3007EBFEB /* TempData.swift in Sources */,
 				73992B1D23E2DD59001C6D83 /* LoginViewController.swift in Sources */,
 				73992B2523E2E5B6001C6D83 /* SearchViewController.swift in Sources */,
 				73992AEA23E2DC93001C6D83 /* AppDelegate.swift in Sources */,
