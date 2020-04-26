@@ -10,5 +10,7 @@ import Foundation
 
 struct TempData {
        static var url:String = "http://www.omdbapi.com/?apikey=df031d45&"
-    
+       static var Username:String = "user name not found!"
+       static var UserEmail:String = "email not found!"
+
 }

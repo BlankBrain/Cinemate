@@ -40,12 +40,22 @@ class LoginViewController: UIViewController {
                         }
                         print(authDataResult.user.email ?? "missing user info")
                         
+                        // MARK: - assigning userdata
+                        
+                        TempData.Username = authDataResult.user.displayName ?? "not found"
+                        TempData.UserEmail = authDataResult.user.email ?? "email not found"
+
+                        //print(TempData.Username )
+                        
                         // ================ coredata user save ============
-                        self.temp.email = authDataResult.user.email
+                        
+                        
+                      //  self.temp.email = authDataResult.user.email
+                        
                       // self.deleteAllUsers()
                         //PersistanceService.saveContext()
-                        self.userHandeler()
-                        self.showAllUsers()
+                       // self.userHandeler()
+                       // self.showAllUsers()
 
                         //================= segue ======================
                         
@@ -65,7 +75,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    //====================================== func ====================================
+    // MARK: - validation
     
     func validateEmail(enteredEmail:String) -> Bool {
 
@@ -83,7 +93,7 @@ class LoginViewController: UIViewController {
             return false
         }
     }
-    //================================== coredata func =================================
+    //MARK: - coredata func
     func userHandeler()  {
               let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "email = %@", emailInput.text!)
@@ -130,7 +140,8 @@ class LoginViewController: UIViewController {
         }
         
     }
-    // =============================== segue
+    
+    // MARK: - segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let HomeViewController = segue.destination as? HomeViewController else {return}
         HomeViewController.user = self.temp
